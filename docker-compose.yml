@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  php_apache:
+    container_name: student-plus-php_8.2_apache_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html  
+    networks:
+      - network
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql-student-plus-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: student_plus
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data-student-plus:/var/lib/mysql  
+    networks:
+      - network
+
+networks:
+  network:
+
+volumes:
+  mysql-data-student-plus: 
