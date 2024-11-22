@@ -21,12 +21,12 @@ return function (RouteCollector $r) {
         include 'views/login/login.php';
     });
 
-    // $r->addRoute('POST', '/generate-token', function () {
-    //     include 'src/generateToken.php';
-    // });
+    $r->addRoute('POST', '/generate-token', function () {
+        include 'src/auth/generateToken.php';
+    });
 
     $r->addRoute('GET', '/logout', function () {
-        include 'src/destroySession.php';
+        include 'src/auth/destroySession.php';
     });
 
     $r->addRoute('GET', '/not-found', function () {
