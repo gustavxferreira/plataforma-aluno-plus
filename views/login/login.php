@@ -16,10 +16,10 @@
                 <h1 class="text-center bg-dark text-white rounded border border-dark p-3">Aluno +</h1>
                 <form id="login-form" class="d-flex flex-column gap-3 text-center">
                     <label for="user">Insira o usuário</label>
-                    <input class="form-control" id="user" type="text" required>
+                    <input class="form-control" name="name" type="text" required>
 
                     <label for="password">Insira a senha</label>
-                    <input class="form-control" id="password" type="text" required>
+                    <input class="form-control" name="password" type="text" required>
                     <button class="btn btn-dark" type="submit">Logar</button>
                 </form>
             </div>
