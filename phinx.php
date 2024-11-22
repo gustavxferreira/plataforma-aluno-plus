@@ -20,7 +20,7 @@ return
         'default_environment' => 'development',
         'production' => [
             'adapter' => 'mysql',
-            'host' => $host,
+            'host' => 'localhost',
             'name' => $dbname,
             'user' => $username,
             'pass' => $password,
@@ -29,7 +29,7 @@ return
         ],
         'development' => [
             'adapter' => 'mysql',
-            'host' => $host,
+            'host' => 'localhost',
             'name' => $dbname,
             'user' => $username,
             'pass' => $password,
