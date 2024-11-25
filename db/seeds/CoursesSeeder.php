@@ -14,25 +14,25 @@ class CoursesSeeder extends AbstractSeed
                 [
                     'title'         => 'Biologia',
                     'description'   => 'Estudo da vida e dos seres vivos, incluindo anatomia, ecologia e evolução.',
-                    'duration'      => 120,
+                    'duration'      => 12,
                     'date_archived' => null,
                 ],
                 [
                     'title'         => 'Matemática',
                     'description'   => 'Curso focado em álgebra, geometria e cálculo diferencial.',
-                    'duration'      => 90,
+                    'duration'      => 12,
                     'date_archived' => null,
                 ],
                 [
                     'title'         => 'História',
                     'description'   => 'Exploração dos principais eventos históricos e sua influência no mundo atual.',
-                    'duration'      => 180,
+                    'duration'      => 12,
                     'date_archived' => null,
                 ],
                 [
                     'title'         => 'Programação em PHP',
                     'description'   => 'Curso básico de desenvolvimento web utilizando PHP e bancos de dados.',
-                    'duration'      => 150,
+                    'duration'      => 6,
                     'date_archived' => '2024-11-01',
                 ],
 
