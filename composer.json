@@ -6,7 +6,8 @@
             "App\\": "app/"
         },
         "files": [
-            "config/database.php"
+            "config/database.php",
+            "app/Helpers/Helpers.php"
         ]
     },
 
