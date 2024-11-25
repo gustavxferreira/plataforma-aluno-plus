@@ -12,16 +12,11 @@ final class Enrollments extends AbstractMigration
         $table = $this->table('enrollments');
         $table->addColumn('student_id', 'integer', ['signed' => false, 'null' => false])
             ->addColumn('course_id', 'integer', ['signed' => false, 'null' => false])
+            ->addColumn('enrollment_code', 'string', ['null' => false])
             ->addColumn('enrollment_date', 'date', ['null' => false])
             ->addTimestamps()
+            ->addForeignKey('course_id', 'courses', 'id', ['delete' => 'NO_ACTION', 'update' => 'NO_ACTION'])
+            ->addForeignKey('student_id', 'students', 'id', ['delete' => 'CASCADE', 'update' => 'NO_ACTION'])
             ->create();
-
-        $this->table('enrollments')
-            ->addForeignKey('course_id', 'courses', 'id')
-            ->update();
-
-        $this->table('enrollments')
-            ->addForeignKey('student_id', 'students', 'id')
-            ->update();
     }
 }
