@@ -16,4 +16,8 @@ class Student extends Model
         'email',
     ];
 
+    public function enrollments()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
 }
