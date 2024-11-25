@@ -9,18 +9,18 @@
     <title>Aluno+</title>
 </head>
 
-<body>
+<body class="bg-light">
     <main class="min-vh-100 min-vw-100">
         <section class="d-flex flex-column justify-content-center align-items-center min-vh-100 ">
-            <div class="p-3 shadow-lg rounded">
-                <h1 class="text-center bg-dark text-white rounded border border-dark p-3">Aluno +</h1>
+            <div class="p-3 shadow-lg rounded border border-dark">
+                <h4 class="text-center bg-dark text-white rounded border border-dark p-3">Aluno +</h4>
                 <form id="login-form" class="d-flex flex-column gap-3 text-center">
                     <label for="user">Insira o usuário</label>
                     <input class="form-control" name="name" type="text" required>
 
                     <label for="password">Insira a senha</label>
                     <input class="form-control" name="password" type="text" required>
-                    <button class="btn btn-dark" type="submit">Logar</button>
+                    <button class="btn btn-dark btn-sm" type="submit">Logar</button>
                 </form>
             </div>
         </section>

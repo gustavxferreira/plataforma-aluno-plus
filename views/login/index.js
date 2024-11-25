@@ -18,7 +18,6 @@ document.querySelector('#login-form').addEventListener('submit', async function 
   
       window.location.href = '/';
     } catch (error) {
-      document.querySelector('.loading-spinner').style.display = 'none';
-      document.getElementById('alertInsert').style.display = 'block';
+   
     }
   })
