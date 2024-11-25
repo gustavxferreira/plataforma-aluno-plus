@@ -39,4 +39,48 @@ return function (RouteCollector $r) {
         include 'views/students/students.php';
     });
 
-};
+    $r->addRoute('GET', '/alunos', function () {
+        checkSessionWeb('/alunos');
+        include 'views/students/students.php';
+    });
+    
+    $r->addRoute('GET', '/alunos/criar', function () {
+        checkSessionWeb('/alunos/criar');
+        include 'views/students/forms/createStudents.php';
+    });
+
+    $r->addRoute('GET', '/alunos/editar/{id:\d+}', function () {
+        checkSessionWeb('/alunos/editar/{id:\d+}');
+        include 'views/students/edit/editStudents.php';
+    });
+    
+    $r->addRoute('GET', '/cursos', function () {
+        checkSessionWeb('/cursos');
+        include 'views/courses/courses.php';
+    });
+
+    $r->addRoute('GET', '/cursos/criar', function () {
+        checkSessionWeb('/cursos/criar');
+        include 'views/courses/forms/createCourses.php';
+    });
+
+    $r->addRoute('GET', '/cursos/editar/{id:\d+}', function () {
+        checkSessionWeb('/cursos/editar/{id:\d+}');
+        include 'views/courses/edit/editCourse.php';
+    });
+
+    $r->addRoute('GET', '/matriculas', function () {
+        checkSessionWeb('/matriculas');
+        include 'views/enrollments/enrollments.php';
+    });
+
+    $r->addRoute('GET', '/matriculas/criar', function () {
+        checkSessionWeb('/matriculas/criar');
+        include 'views/enrollments/forms/createEnrollments.php';
+    });
+
+    $r->addRoute('GET', '/matriculas/editar/{id:\d+}', function () {
+        checkSessionWeb('/matriculas/editar/{id:\d+}');
+        include 'views/enrollments/edit/editEnrollments.php';
+    });
+};  
