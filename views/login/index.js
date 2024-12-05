@@ -1,10 +1,17 @@
+document.addEventListener("DOMContentLoaded", () => {
+  localStorage.removeItem('session');
+  localStorage.removeItem('autoSavedSql');
+  localStorage.removeItem('showThisQueryObject');
+  localStorage.removeItem('showThisQuery');
+})
+
 document.querySelector('#login-form').addEventListener('submit', async function (e) {
     e.preventDefault();
   
     try {
       const formData = new FormData(this);
       
-      const response = await fetch('/generate-token', {
+      const response = await fetch('api/generate-token', {
         method: 'POST',
         body: formData
       });
@@ -21,3 +28,5 @@ document.querySelector('#login-form').addEventListener('submit', async function 
    
     }
   })
+
+  
