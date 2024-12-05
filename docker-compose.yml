@@ -1,25 +1,26 @@
 version: "3.8"
 
 services:
-  php_apache:
-    container_name: student-plus-php_8.2_apache_container
+  app:
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
+    container_name: plataforma-aluno-plus
+    restart: always
+    working_dir: /var/www/
     volumes:
-      - ./:/var/www/html:delegated
-    networks:
-      - network
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
-    depends_on:
-      - mysql
-    extra_hosts:
-      - "mysql:172.18.0.2"
+      - ./:/var/www/
 
+  nginx:
+    image: nginx:1.25.1-alpine-slim
+    container_name: plataforma-aluno-plus-nginx
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./nginx:/etc/nginx/conf.d
+  
   mysql:
     image: mysql:latest
     container_name: mysql-student-plus-container
@@ -30,17 +31,5 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data-student-plus:/var/lib/mysql
-    networks:
-      - network
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
-    extra_hosts:
-      - "php_apache:172.18.0.3"
-
-networks:
-  network:
-    driver: bridge
-
 volumes:
   mysql-data-student-plus:
